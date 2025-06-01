@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block konten %}
+<h1>Your Translation History</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Mode</th>
+            <th>Input</th>
+            <th>Output</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for t in translations %}
+        <tr>
+            <td>{{ t.timestamp.strftime("%Y-%m-%d %H:%M:%S") }}</td>
+            <td>{{ t.mode }}</td>
+            <td>{{ t.input_text }}</td>
+            <td>{{ t.output_text }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="4">No history found.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

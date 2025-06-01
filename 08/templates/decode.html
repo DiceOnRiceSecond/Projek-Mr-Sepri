@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block konten %}
+    <h1>Morse Code Decoder</h1>
+
+    <form method="POST">
+        <input name="morse" placeholder="Enter Morse code (e.g. .... . .-.. .-.. ---)" required>
+        <button type="submit">Decode</button>
+    </form>
+
+    {% if result %}
+        <h2>Result:</h2>
+        <p style="font-size: 1.2rem;">{{ result }}</p>
+    {% endif %}
+
+    <p style="margin-top: 2rem; font-size: 0.95rem; color: #6B7280;">
+        Pakai spasi diantara huruf (contoh : `.... .`) dan `/` diantara kata (contoh : `.... . / .-.. --- ...- .`)
+    </p>
+{% endblock %}

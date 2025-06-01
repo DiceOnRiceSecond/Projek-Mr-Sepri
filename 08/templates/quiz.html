@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block konten %}
+<h1>Morse Code Encoder</h1>
+<form method="POST">
+    <input name="text" type="text" placeholder="Enter text" required>
+    <button type="submit">Convert</button>
+</form>
+
+{% if result %}
+    <p><strong>Morse Code:</strong> {{ result }}</p>
+{% endif %}
+{% endblock %}

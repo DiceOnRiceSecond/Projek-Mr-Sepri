@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block konten %}
+<h1>Morse Code Chart</h1>
+<table border="1">
+    <tr>
+        <th>Character</th>
+        <th>Morse</th>
+    </tr>
+    {% for char, code in morse_dict.items() %}
+    <tr>
+        <td>{{ char }}</td>
+        <td>{{ code }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
